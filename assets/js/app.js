@@ -2,7 +2,7 @@
 
 let header = $(`
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-<a class="navbar-brand" href="index.html">John Doe </a>
+<a class="navbar-brand" href="index.html">Ladvil </a>
 <div class="hamburger_wrapper navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
 
   <div id="js-hamburger" class="hamburger">
@@ -16,9 +16,7 @@ let header = $(`
 <div class="collapse navbar-collapse " id="navbarSupportedContent">
   <ul class="navbar-nav ml-auto" id = "navbar-content">
    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-   <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-   <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
    <div class="bike">
    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-80 0 650 400" preserveAspectRatio="xMinYMin meet"> 
@@ -93,6 +91,14 @@ let header = $(`
    </svg>
  </div>
   </ul>
+  &nbsp;&nbsp;
+  <label class='switch'>
+    <input type='checkbox' id="checkboxtoggle" class='checkbox'>
+    <span class='slider rounded'>
+      <i class="fas fa-sun day"></i>
+      <i class="fas fa-moon night"></i>
+    </span>
+  </label>
 </div>
 </nav>`);
 
@@ -180,7 +186,7 @@ let footer = $(`
                  <path id="camera" class="st0" d="M79,60.5h44c10.5,0,19,8.5,19,19v44c0,10.5-8.5,19-19,19H79c-10.5,0-19-8.5-19-19v-44                                                                            C60,69,68.5,60.5,79,60.5z" />
               </svg>
             </a>      
-            <a class="social-button github" href="#" target="_blank">
+            <a class="social-button github" href="https://github.com/horisapien/" target="_blank">
             <!-- SVG code for Github icon -->
             <svg class="github-icon-footer" width="45px" height="45px" viewBox="0 0 300 300">
                 <!-- body -->
@@ -242,6 +248,15 @@ $(function(){
   
   $("#js-hamburger").on("click", function(){
     $(this).toggleClass('is-active');
+  });
+
+  $(document).ready(function() {
+    $('input.checkbox').change(function () {
+        $('body').toggleClass('darkmode');
+        $('.text-dark').toggleClass('darkmodetext');
+        $('tr').toggleClass('bordered');
+        // $('.darkmodetext').toggleClass('text-dark');
+      });
   });
 
 });
